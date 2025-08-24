@@ -33,14 +33,20 @@ public class Apple : MonoBehaviour
 
     public void DestroyApple()
     {
-        Destroy(gameObject);
+        OnDestroy();
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.AddScore(1);
+        }
+        Destroy(gameObject, 0.5f);
     }
-    
+
     void OnDestroy()
     {
         if (effectPrefab != null)
         {
-            Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            effectPrefab.SetActive(true);
+            Destroy(effectPrefab, 0.5f);
         }
     }
 }

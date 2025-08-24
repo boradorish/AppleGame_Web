@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     [Header("UI")]
-    public RectTransform selectionBox;   // Canvas 안의 SelectionBox
-    public Camera cam; 
+    // public RectTransform selectionBox;   // Canvas 안의 SelectionBox
+    // public Camera cam; 
                       
     GameObject[] apples;
     Vector2 startPos; // 드래그 시작 좌표
